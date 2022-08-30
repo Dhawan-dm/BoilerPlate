@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+*{
+    font-family: 'Roboto', sans-serif;
+}
+.signup-form{
+    margin: 4vh;
+    padding: 4vh;
+}
+.head{
+    font-size: 5vh;
+    margin: 4vh;
+    padding: 4vh;
+    margin-bottom: 0vh !important;
+}
+.signup-inputs{
+    display: flex;
+    flex-direction: column;
+}
+.signup-info{
+    width: 20%;
+    padding: 2vh;
+    margin: 1vh;
+    border: none;
+    border-bottom: 2px solid black;
+}
+.submit-signup{
+    padding: .5vh;
+    width: 5%;
+    margin: 1vh;
+}
