@@ -1,5 +1,4 @@
-import { signUp } from "../actionCreator";
-import { Actions } from "../actions";
+import { Actions } from "../actionTypes";
 import {actionTypes} from "./type"
 
 interface stateType{
