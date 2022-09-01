@@ -1,24 +1,24 @@
 import { Actions } from "../actionTypes";
-import {actionTypes} from "./type"
+import { actionTypes } from "./type"
 
-interface stateType{
-    users:{
-        name:string,
-        userId:string,
-        password:string
+interface stateType {
+    users: {
+        name: string,
+        userId: string,
+        password: string
     }[]
 }
-const initialState:stateType = {
-    users : []
+const initialState: stateType = {
+    users: []
 }
 
-const reducer = (state = initialState, action:actionTypes)=>{
-    switch(action.type){
-        case Actions.SIGN_UP:{
-            return {...state, users:[action.payload, ...state.users]}
+const reducer = (state = initialState, action: actionTypes) => {
+    switch (action.type) {
+        case Actions.SIGN_UP: {
+            return { ...state, users: [action.payload, ...state.users] }
         }
         default:
-            return state     
+            return state
     }
-} 
+}
 export default reducer;
