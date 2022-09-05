@@ -1,11 +1,14 @@
-import "./style.css"
+import "./style.ts"
 import { connect } from 'react-redux';
 import React, { useState } from 'react'
 import { Dispatch } from 'redux';
 import { signUp } from '../../store/actions';
 import { inputType } from '../../store/actions/index'
-import { Navigate } from "react-router-dom";
-import { PROFILE_ROUTE } from "../../utils/routeConstants";
+import Input from "../../components/shared/Inputes/Input";
+import SignUpLeft from "../../components/SignUpLeft/index";
+import {Wrapper} from './style'
+import SignUpRight from "../../components/SignUpRight";
+
 
 interface signupType {
     addUser: (e: inputType) => void
@@ -41,17 +44,10 @@ function Signup(props: signupType) {
     }
 
     return (
-        <div className="container">
-            <h2 className="head">Sign Up</h2>
-            <form className="signup-form" onSubmit={handleSubmit}>
-                <div className="signup-inputs">
-                    <input type="text" value={input.name} className="signup-info" placeholder='Name' onChange={nameHandler} />
-                    <input type="text" value={input.userId} className="signup-info" placeholder='Username' onChange={userIdHandler} />
-                    <input type="password" value={input.password} className="signup-info" placeholder='password' onChange={passwordHandler} />
-                    <button type='submit' className="submit-signup">signup</button>
-                </div>
-            </form>
-        </div>
+        <Wrapper>
+            <SignUpLeft></SignUpLeft>
+            <SignUpRight></SignUpRight>
+        </Wrapper>
     )
 }
 
@@ -59,3 +55,26 @@ const mapDispaychtoProps = (dispatch: Dispatch) => {
     return { addUser: (e: inputType) => dispatch(signUp(e)) }
 }
 export default connect(null, mapDispaychtoProps)(Signup)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{/* <h2 className="head">Sign Up</h2>
+            <form className="signup-form" onSubmit={handleSubmit}>
+                <div className="signup-inputs">
+                    <input type="text" value={input.name} className="signup-info" placeholder='Name' onChange={nameHandler} />
+                    <input type="text" value={input.userId} className="signup-info" placeholder='Username' onChange={userIdHandler} />
+                    <input type="password" value={input.password} className="signup-info" placeholder='password' onChange={passwordHandler} />
+                    <button type='submit' className="submit-signup">signup</button>
+                </div>
+            </form> */}
