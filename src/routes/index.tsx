@@ -8,8 +8,9 @@ import {
 import { v4 as uuid } from "uuid"
 import Signup from './Signup/index'
 import Profile from "./Profile/index";
-import { ROOT_ROUTE, PROFILE_ROUTE } from "../utils/routeConstants"
+import { ROOT_ROUTE, PROFILE_ROUTE, LOGIN_ROUTE } from "../utils/routeConstants"
 import { ReactNode } from "react";
+import Login from "./Login";
 
 const routesConfig = [
   {
@@ -23,6 +24,12 @@ const routesConfig = [
     component: <Profile />,
     exact: true,
     privateRoute: true,
+  },
+  {
+    path: LOGIN_ROUTE,
+    component: <Login />,
+    exact: true,
+    privateRoute: false,
   },
 ]
 function App() {

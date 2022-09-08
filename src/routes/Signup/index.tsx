@@ -4,10 +4,9 @@ import React, { useState } from 'react'
 import { Dispatch } from 'redux';
 import { signUp } from '../../store/actions';
 import { inputType } from '../../store/actions/index'
-import Input from "../../components/shared/Inputes/Input";
-import SignUpLeft from "../../components/SignUpLeft/index";
 import {Wrapper} from './style'
-import SignUpRight from "../../components/SignUpRight";
+import LoginSignUpRight from "../../components/LoginSignUpRight";
+import LoginSignUpLeft from "../../components/LoginSignUpLeft/index";
 
 
 interface signupType {
@@ -45,8 +44,8 @@ function Signup(props: signupType) {
 
     return (
         <Wrapper>
-            <SignUpLeft></SignUpLeft>
-            <SignUpRight></SignUpRight>
+            <LoginSignUpLeft page = {'Signup'}></LoginSignUpLeft>
+            <LoginSignUpRight page = {'Signup'}></LoginSignUpRight>
         </Wrapper>
     )
 }

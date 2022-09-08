@@ -1,8 +1,12 @@
 import { Checked } from './style'
 
-function Check() {
+interface PropsType{
+  color: string;
+}
+
+function Check(props:PropsType) {
   return (
-    <Checked>
+    <Checked color='blue'>
     </Checked>
   )
 }

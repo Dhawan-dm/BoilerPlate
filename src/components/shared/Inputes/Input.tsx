@@ -1,8 +1,14 @@
 import {CustomInput} from './style'
 
-function Input() {
+interface PropsType{
+  page:string;
+  placeholder:string
+  type:string
+}
+
+const Input = (props:PropsType)=> {
   return (
-      <CustomInput></CustomInput>
+      <CustomInput page = {props.page} placeholder={props.placeholder} type={props.type}></CustomInput>
   );
 }
 

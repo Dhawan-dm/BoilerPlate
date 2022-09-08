@@ -1,8 +1,13 @@
-import React from 'react'
+import LoginSignUpLeft from '../../components/LoginSignUpLeft'
+import LoginSignUpRight from '../../components/LoginSignUpRight'
+import { Wrapper } from './style'
 
 function Login() {
   return (
-    <div>Login</div>
+    <Wrapper>
+      <LoginSignUpLeft page = {'Login'}></LoginSignUpLeft>
+      <LoginSignUpRight page = {'Login'}></LoginSignUpRight>
+    </Wrapper>
   )
 }
 
