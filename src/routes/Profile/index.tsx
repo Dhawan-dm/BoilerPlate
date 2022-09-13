@@ -1,20 +1,27 @@
+import { connect } from 'react-redux';
 import { Navigate, useLocation } from 'react-router-dom'
 import { ROOT_ROUTE, LOGIN_ROUTE } from "../../utils/routeConstants"
 
-function Profile() {
-  const location = useLocation()
-let isLogged = false;
-  const handleLogout = () =>{
-    localStorage.clear();
-    isLogged = true
-  }
+interface ProfilePropsType{
+  users:any
+}
+
+function Profile(props:ProfilePropsType) {
+  
   
   return (
-    <div>
-      welcome to profile
-      <button onClick={handleLogout}>Logout</button>
-    </div>
+    props.users.map((user:any, index:number)=>{
+      <div key={index}>
+        {user}
+      </div>
+    })
   );
 }
 
-export default Profile;
+const mapStateToProps = (state: any) => {
+  return {
+    users:state.users
+  }
+}
+
+  export default connect(mapStateToProps)(Profile)

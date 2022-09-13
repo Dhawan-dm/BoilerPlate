@@ -1,24 +1,9 @@
-import { Actions } from "../actionTypes";
-import { actionTypes } from "./type"
+import { combineReducers } from "redux";
+import AuthReducer   from "./userAuth";
+import userReducer from "./users";
 
-interface stateType {
-    users: {
-        name: string,
-        userId: string,
-        password: string
-    }[]
-}
-const initialState: stateType = {
-    users: []
-}
 
-const reducer = (state = initialState, action: actionTypes) => {
-    switch (action.type) {
-        case Actions.SIGN_UP: {
-            return { ...state, users: [action.payload, ...state.users] }
-        }
-        default:
-            return state
-    }
-}
-export default reducer;
+export default combineReducers({
+  AuthReducer,
+  userReducer
+});

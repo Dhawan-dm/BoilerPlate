@@ -8,39 +8,38 @@ import {Wrapper} from './style'
 import LoginSignUpRight from "../../components/LoginSignUpRight";
 import LoginSignUpLeft from "../../components/LoginSignUpLeft/index";
 
-
 interface signupType {
     addUser: (e: inputType) => void
 }
 
 function Signup(props: signupType) {
 
-    const [input, setinput] = useState<inputType>({
-        name: "",
-        userId: "",
-        password: ""
-    });
+    // const [input, setinput] = useState<inputType>({
+    //     name: "",
+    //     userId: "",
+    //     password: ""
+    // });
 
-    const nameHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setinput({ ...input, name: e.target.value })
-    }
-    const userIdHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setinput({ ...input, userId: e.target.value })
-    }
-    const passwordHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setinput({ ...input, password: e.target.value })
-    }
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        props.addUser(input)
-        setinput({
-            name: "",
-            userId: "",
-            password: ""
-        })
-        localStorage.setItem('isLogged', 'true');
-
-    }
+    // const nameHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    //     setinput({ ...input, name: e.target.value })
+    // }
+    // const userIdHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    //     setinput({ ...input, userId: e.target.value })
+    // }
+    // const passwordHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    //     setinput({ ...input, password: e.target.value })
+    // }
+    // const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    //     e.preventDefault();
+    //     props.addUser(input)
+    //     setinput({
+    //         name: "",
+    //         userId: "",
+    //         password: ""
+    //     })
+        
+    // }
+    // localStorage.setItem('isLogged', 'true');
 
     return (
         <Wrapper>

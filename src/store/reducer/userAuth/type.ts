@@ -1,2 +1,2 @@
-import { signUp } from "../actions";
+import { signUp } from "../../actions";
 export type actionTypes = ReturnType<typeof signUp>

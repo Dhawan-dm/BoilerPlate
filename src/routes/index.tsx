@@ -3,7 +3,6 @@ import {
   Navigate,
   Route,
   Routes,
-  useRoutes,
 } from "react-router-dom";
 import { v4 as uuid } from "uuid"
 import Signup from './Signup/index'
@@ -23,7 +22,7 @@ const routesConfig = [
     path: PROFILE_ROUTE,
     component: <Profile />,
     exact: true,
-    privateRoute: true,
+    privateRoute: false,
   },
   {
     path: LOGIN_ROUTE,
@@ -47,8 +46,6 @@ function App() {
     const isUserLogged = localStorage.getItem("isLogged");
     const isValidRoute =
       (privateRoute && isUserLogged) || !(privateRoute || isUserLogged);
-
-      console.log(component);
       
     if (isValidRoute)
       return component

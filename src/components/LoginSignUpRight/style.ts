@@ -38,7 +38,7 @@ flex-direction:column;
 }
 `
 export const ContainerInputTop = styled.div`
-height:${(props:StylePropsType)=>props.page === 'Signup'?"40%":'30%'};
+height:${(props:StylePropsType)=>props.page === 'Signup'?"40%"  :'30%'};
 width:80%;
 align-self:center;
 margin-top:${(props:StylePropsType)=>props.page === 'Signup'?"10%":'20%'};
@@ -51,11 +51,14 @@ margin-top:${(props:StylePropsType)=>props.page === 'Signup'?"10%":'20%'};
 {
     height: 35%;
 }
-@media screen and (min-width: 701px) and (max-width: 900px) {
+@media screen and (min-width: 701px) and (max-width: 900px) and (orientation:potrait) {
     height:${(props:StylePropsType)=>props.page === 'Signup'?"20%":'15%'};
     margin-top:${(props:StylePropsType)=>props.page === 'Signup'?"10%":'10%'}
 }
-@media screen and (min-width: 901px) and (max-width: 950px) {
+@media screen and (min-width: 701px) and (max-width: 800px) and (orientation:landscape) {
+    height:35%;
+}
+@media screen and (min-width: 901px) and (max-width: 950px) and (orientation:potrait) {
     height:15%
 }
 @media screen and (min-width: 501px) and (max-width: 700px) {
@@ -113,6 +116,12 @@ font-family: 'Inter', sans-serif;
 @media screen and (max-width: 300px){
     margin: 25px 0px 0px 0px;
 }
+@media screen and (min-width: 801px) and (max-width: 900px) and (orientation:landscape) {
+    margin: 20px 0px 10px 0px;
+}
+@media screen and (min-width: 901px) and (max-width:1100px) and (orientation:landscape) {
+    margin: 15px 0px 10px 0px;
+}
 `
 export const Label = styled.label`
 font-size: 13px;
@@ -127,6 +136,15 @@ align-self:center;
 }
 @media screen and (max-width: 300px){
     font-size: 10px;
+}
+@media screen and (min-width: 701px) and (max-width: 800px) and (orientation:landscape) {
+    font-size: 9px;
+}
+@media screen and (min-width: 801px) and (max-width: 900px) and (orientation:landscape) {
+    font-size: 9px;
+}
+@media screen and (min-width: 901px) and (max-width:1100px) and (orientation:landscape) {
+    font-size: 11px;
 }
 `
 export const OrWith = styled.div`
@@ -170,10 +188,10 @@ justify-content:center;
 align-items:center;
 height:100%;
 width:15%;
-@media screen and (min-width:751px) and (max-width:1000px){
+@media screen and (min-width:751px) and (max-width:1000px)and (orientation:portrait){
     width:6%;
 }
-@media screen and (min-width:500px) and (max-width:750px){
+@media screen and (min-width:500px) and (max-width:750px) and (orientation:portrait){
     width:8%;
 }
 `
@@ -188,6 +206,7 @@ font-size:15px;
 align-self:center;
 text-decoration:none;
 font-family: 'Inter', sans-serif;
+font-weight:bold;
 @media screen and (max-width: 300px){
     font-size: 12px;
 }
@@ -211,6 +230,18 @@ justify-content:center;
 }
 @media screen and (min-width: 801px) and (max-width: 900px) {
     font-size: 13px;
+}
+@media screen and (min-width: 701px) and (max-width: 800px) and (orientation:landscape) {
+    font-size: 8px;
+}
+@media screen and (min-width: 801px) and (max-width: 900px) and (orientation:landscape) {
+    font-size:9px;
+}
+@media screen and (min-width: 901px) and (max-width: 970px) and (orientation:landscape) {
+    font-size:10px;
+}
+@media screen and (min-width: 1150px) and (max-width: 1280px) and (orientation:landscape) {
+    font-size:11px;
 }
 `
 

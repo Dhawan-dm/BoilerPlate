@@ -1,4 +1,4 @@
-import { Actions } from '../actionTypes/index'
+import { Actions, AsyncActions } from '../actionTypes/index'
 
 export interface inputType {
     name: string,
@@ -14,5 +14,22 @@ export const signUp = (e: inputType) => {
             password: e.password,
 
         }
+    }
+}
+export const fetchRequest = () => {
+    return {
+        type: AsyncActions.FETCH_REQUESTED,
+        payload: {
+            name: "",
+            userId: "",
+            password: "",
+
+        }
+    }
+}
+export const fetchSuccess = (data:any) => {
+    return {
+        type: AsyncActions.FETCH_SUCCESS,
+        payload:data
     }
 }

@@ -26,10 +26,10 @@ border:none;
     font-size:100%;
     border-radius:10px;
 }
-@media screen and (min-width: 701px) and (max-width: 900px) {
+@media screen and (min-width: 701px) and (max-width: 900px) and (orientation:potrait){
      height:8%;
 }
-@media screen and (min-width: 901px) and (max-width: 950px) {
+@media screen and (min-width: 901px) and (max-width: 950px) and (orientation:potrait) {
     height:7%
 }
 @media screen and (min-width: 501px) and (max-width: 700px) {
