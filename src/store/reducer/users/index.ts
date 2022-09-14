@@ -1,25 +1,24 @@
 import { AsyncActions } from "../../actionTypes";
 import {  asyncActionTypes } from "./type"
 
-interface stateType {
-   usersData:{
-   }[]
+export interface stateType {
+   usersData:[]
 }
 const initialState: stateType = {
-    usersData: [],
+    usersData:[],
 }
 
-const userReducer = (state = initialState, action: asyncActionTypes) => {
+const userReducer = (stateUser = initialState, action: asyncActionTypes) => {
     switch (action.type) {
-        case AsyncActions.FETCH_SUCCESS: {
+        case AsyncActions.SUCCESS: {
             
             return {
-                    ...state,
-                    userData:action.payload
+                ...stateUser,
+                usersData:action.payload
             }
         }
         default:
-            return state
+            return stateUser
     }
 }
 export default userReducer;

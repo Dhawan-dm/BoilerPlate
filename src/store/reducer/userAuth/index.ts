@@ -15,7 +15,6 @@ const initialState: stateType = {
 const authReducer = (state = initialState, action: actionTypes) => {
     switch (action.type) {
         case Actions.SIGN_UP: {
-            console.log("hello");
             return { ...state, users: [action.payload, ...state.users] }
         }
         default:

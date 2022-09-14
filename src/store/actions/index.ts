@@ -16,20 +16,15 @@ export const signUp = (e: inputType) => {
         }
     }
 }
-export const fetchRequest = () => {
+export const request = () => {
     return {
-        type: AsyncActions.FETCH_REQUESTED,
-        payload: {
-            name: "",
-            userId: "",
-            password: "",
-
-        }
+        type: AsyncActions.REQUEST_DATA,
+       
     }
 }
-export const fetchSuccess = (data:any) => {
+export const success = (data:any) => {
     return {
-        type: AsyncActions.FETCH_SUCCESS,
+        type: AsyncActions.SUCCESS,
         payload:data
     }
 }

@@ -179,8 +179,9 @@ border: 1px solid #F1F1FA;
     height:10%;
 }
 @media screen and (min-width:751px) and (max-width:1000px){
-    height:7%;
+    height:12%;
 }
+
 `
 export const GoogleIcon = styled.div`
 display:flex;
@@ -209,6 +210,12 @@ font-family: 'Inter', sans-serif;
 font-weight:bold;
 @media screen and (max-width: 300px){
     font-size: 12px;
+}
+@media screen and (min-width:851px) and (max-width:1000px){
+    font-size:14px;
+}
+@media screen and (min-width:701px) and (max-width:850px){
+    font-size:12px;
 }
 `
 

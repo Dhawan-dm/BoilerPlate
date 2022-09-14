@@ -1,27 +1,38 @@
+import { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { Navigate, useLocation } from 'react-router-dom'
-import { ROOT_ROUTE, LOGIN_ROUTE } from "../../utils/routeConstants"
+import { Dispatch } from 'redux';
+import { request } from '../../store/actions';
+import { stateType } from '../../store/reducer/users';
 
 interface ProfilePropsType{
-  users:any
+  users:[],
+  fetch:()=>void
 }
 
 function Profile(props:ProfilePropsType) {
   
+  useEffect(() => {
+    props.fetch()
+  },[])
+
+  console.log(props.users);
+  console.log(props);
   
-  return (
-    props.users.map((user:any, index:number)=>{
-      <div key={index}>
-        {user}
-      </div>
-    })
-  );
+  return (<div></div>)
+
 }
 
-const mapStateToProps = (state: any) => {
+const mapStateToProps = (stateUser: any) => {
+  console.log(stateUser);
+
   return {
-    users:state.users
+    users:stateUser.userReducer.userData
+  }
+}
+const mapdispatchToProps = (dispatch: Dispatch) => {
+  return {
+    fetch:()=>dispatch(request())
   }
 }
 
-  export default connect(mapStateToProps)(Profile)
+  export default connect(mapStateToProps, mapdispatchToProps)(Profile)

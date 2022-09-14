@@ -1,3 +1,3 @@
-import { fetchSuccess } from "../../actions";
+import { success } from "../../actions";
     
-export type asyncActionTypes = ReturnType<typeof fetchSuccess>
+export type asyncActionTypes = ReturnType<typeof success>
