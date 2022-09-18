@@ -1,20 +1,20 @@
 import { put, takeEvery } from 'redux-saga/effects'
-import { success } from '../actions';
+import { fetchData } from '../../utils/apiData';
+import { fetchGithubUserFaliure, fetchGithubUserSuccess } from '../actions';
 import { AsyncActions } from '../actionTypes';
 
 
-function* workerSaga():any{
+function* workerSaga(): any {
     try {
-       let users = yield fetch("https://api.github.com/users");
-       let data = yield users.json();
-       yield put(success(data));
-     } catch (e) {
-        yield put({type: AsyncActions.FAILIURE, message:"error"});
-     }
+        let data = yield fetchData();
+        yield put(fetchGithubUserSuccess(data));
+    } catch (e) {
+        yield put(fetchGithubUserFaliure());
+    }
 }
 
-function* rootSaga(){
-    yield takeEvery(AsyncActions.REQUEST_DATA,workerSaga)
+function* rootSaga() {
+    yield takeEvery(AsyncActions.GITHUB_USER_DATA_REQUEST, workerSaga)
 }
 
 export default rootSaga;   

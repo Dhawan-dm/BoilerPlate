@@ -31,7 +31,7 @@ const routesConfig = [
     privateRoute: false,
   },
 ]
-function App() {
+const App = ()=>{
 
 
   // const AppRoute = () => {

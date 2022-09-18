@@ -12,7 +12,7 @@ interface signupType {
     addUser: (e: inputType) => void
 }
 
-function Signup(props: signupType) {
+const Signup = (props: signupType)=>{
 
     // const [input, setinput] = useState<inputType>({
     //     name: "",

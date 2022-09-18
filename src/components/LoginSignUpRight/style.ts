@@ -1,15 +1,16 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-interface StylePropsType{
-    page:string;
+interface StylePropsType {
+    page: string;
 }
-interface AnchorPropsType{
-    variant:string;
+interface AnchorPropsType {
+    variant: string;
 }
 export const Container = styled.div`
 width:40%;
 height:100%;
+font-family: 'Inter', sans-serif;
 @media screen and (orientation:portrait)
 {
     width:100%;
@@ -18,7 +19,6 @@ height:100%;
 export const MobileHead = styled.h3`
 font-size:120%;
 text-align:center;
-font-family: 'Inter', sans-serif;
 @media screen and (orientation:landscape)
 {
     display:none;
@@ -38,13 +38,17 @@ flex-direction:column;
 }
 `
 export const ContainerInputTop = styled.div`
-height:${(props:StylePropsType)=>props.page === 'Signup'?"40%"  :'30%'};
+height:${(props: StylePropsType) => props.page === 'Signup' ? "40%" : '30%'};
 width:80%;
 align-self:center;
-margin-top:${(props:StylePropsType)=>props.page === 'Signup'?"10%":'20%'};
+margin-top:${(props: StylePropsType) => props.page === 'Signup' ? "10%" : '20%'};
 @media screen and (orientation:portrait)
 {
-    height: ${(props:StylePropsType)=>props.page === 'Signup'?"24%":'18%'};
+    display: flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    height: ${(props: StylePropsType) => props.page === 'Signup' ? "24%" : '18%'};
     width:100%;
 }
 @media screen and (max-width:1025px) and (orientation:landscape)
@@ -52,26 +56,31 @@ margin-top:${(props:StylePropsType)=>props.page === 'Signup'?"10%":'20%'};
     height: 35%;
 }
 @media screen and (min-width: 701px) and (max-width: 900px) and (orientation:potrait) {
-    height:${(props:StylePropsType)=>props.page === 'Signup'?"20%":'15%'};
-    margin-top:${(props:StylePropsType)=>props.page === 'Signup'?"10%":'10%'}
+    height:${(props: StylePropsType) => props.page === 'Signup' ? "20%" : '15%'};
+    margin-top:${(props: StylePropsType) => props.page === 'Signup' ? "10%" : '10%'}
 }
 @media screen and (min-width: 701px) and (max-width: 800px) and (orientation:landscape) {
     height:35%;
 }
 @media screen and (min-width: 901px) and (max-width: 950px) and (orientation:potrait) {
-    height:15%
+    height:15%;
 }
 @media screen and (min-width: 501px) and (max-width: 700px) {
-    height:${(props:StylePropsType)=>props.page === 'Signup'?"30%":'25%'}
+    height:${(props: StylePropsType) => props.page === 'Signup' ? "30%" : '25%'};
 }
 `
 export const InputBox = styled.div`
 display:flex;
 width:100%;
-height:${(props:StylePropsType)=>props.page === 'Signup'?"23%":'29%'};
+height:${(props: StylePropsType) => props.page === 'Signup' ? "23%" : '29%'};
 border: 1px solid #F1F1FA;
 border-radius: 14px;
 margin: 20px 0px;
+@media screen and (orientation:portrait)
+{
+    width:90%;
+    margin:10px 0px;
+}
 `
 export const EyeContainer = styled.div`
 display:flex;
@@ -91,29 +100,31 @@ width:80%;
 align-self:center;
 @media screen and (orientation:portrait)
 {
-    width:100%;
+    width:90%;
 }
 `
 export const ChecboxContainer = styled.div`
-display:${(props:StylePropsType)=>props.page === 'Signup'?"flex":'none'};
+display:${(props: StylePropsType) => props.page === 'Signup' ? "flex" : 'none'};
 margin:15px 0px;
-font-family: 'Inter', sans-serif;
 @media screen and (min-width:901px) and (max-width: 1100px) {
     margin:40px 0px 20px 0px;
 }
 @media screen and (min-width: 1101px) {
-    margin:10px 0px 20px 0px;
+    margin:10px 20px 20px 0px;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 400px) and (orientation:portrait) {
     margin:25px 0px 10px 0px;
 }
-@media screen and (min-width: 401px) and (max-width: 800px) {
+@media screen and (min-width: 401px) and (max-width: 600px) and (orientation:portrait) {
     margin:10px 0px 10px 0px;
 }
-@media screen and (min-width: 801px) and (max-width: 900px) {
+@media screen and (min-width: 601px) and (max-width: 800px) and (orientation:portrait) {
+    margin:10px 0px 10px 0px;
+}
+@media screen and (min-width: 801px) and (max-width: 900px) and (orientation:portrait) {
     margin:0px 0px 10px 0px;
 }
-@media screen and (max-width: 300px){
+@media screen and (max-width: 300px) and (orientation:portrait){
     margin: 25px 0px 0px 0px;
 }
 @media screen and (min-width: 801px) and (max-width: 900px) and (orientation:landscape) {
@@ -121,6 +132,9 @@ font-family: 'Inter', sans-serif;
 }
 @media screen and (min-width: 901px) and (max-width:1100px) and (orientation:landscape) {
     margin: 15px 0px 10px 0px;
+}
+@media screen and (min-width: 601px) and (max-width: 700px) and (orientation:landscape) {
+    margin:25px 0px 10px 0px;
 }
 `
 export const Label = styled.label`
@@ -137,6 +151,9 @@ align-self:center;
 @media screen and (max-width: 300px){
     font-size: 10px;
 }
+@media screen and (min-width: 601px) and (max-width: 700px) and (orientation:landscape) {
+    font-size: 10px;
+}
 @media screen and (min-width: 701px) and (max-width: 800px) and (orientation:landscape) {
     font-size: 9px;
 }
@@ -148,13 +165,12 @@ align-self:center;
 }
 `
 export const OrWith = styled.div`
-display:${(props:StylePropsType)=>props.page === 'Signup'?"block":'none'};
+display:${(props: StylePropsType) => props.page === 'Signup' ? "block" : 'none'};
 width:100%;
 text-align: center;
 font-size: 15px;
 margin-top: 10px;
 color: #91919F;
-font-family: 'Inter', sans-serif;
 @media screen and (orientation:portrait)
 {
     font-size:11px;
@@ -162,7 +178,7 @@ font-family: 'Inter', sans-serif;
 }
 `
 export const GoogleContainer = styled.div`
-display:${(props:StylePropsType)=>props.page === 'Signup'?"flex":'none'};
+display:${(props: StylePropsType) => props.page === 'Signup' ? "flex" : 'none'};
 flex-direction:column;
 justify-content:center;
 width:100%;
@@ -206,7 +222,6 @@ color: black;
 font-size:15px;
 align-self:center;
 text-decoration:none;
-font-family: 'Inter', sans-serif;
 font-weight:bold;
 @media screen and (max-width: 300px){
     font-size: 12px;
@@ -222,8 +237,7 @@ font-weight:bold;
 export const LoginDiv = styled.div`
 display:flex;
 color:#91919F;
-margin: ${(props:StylePropsType)=>props.page === 'Signup'?"2% 18%":'2% 15%'}; 
-font-family: 'Inter', sans-serif;
+margin: ${(props: StylePropsType) => props.page === 'Signup' ? "2% 18%" : '2% 15%'}; 
 font-size:17px;
 justify-content:center;
 @media screen and (min-width:901px) and (max-width: 1180px) {
@@ -234,6 +248,12 @@ justify-content:center;
 }
 @media screen and (max-width: 400px){
     font-size: 11px;
+}
+@media screen and (min-width: 401px) and (max-width: 600px){
+    font-size: 11px;
+}
+@media screen and (min-width: 601px) and (max-width: 700px) and (orientation:landscape) {
+    font-size: 7px;
 }
 @media screen and (min-width: 801px) and (max-width: 900px) {
     font-size: 13px;
@@ -254,15 +274,14 @@ justify-content:center;
 
 export const LoginAnchor = styled(Link)`
 margin: 0px 1%;
-text-decoration:${(props:AnchorPropsType)=>props.variant === "route"?"underline":"none"};
+text-decoration:${(props: AnchorPropsType) => props.variant === "route" ? "underline" : "none"};
 `
 
 //login
 
 export const ForgetPasswordDiv = styled.div`
-display:${(props:StylePropsType)=>props.page === 'Signup'?"none":'block'};
+display:${(props: StylePropsType) => props.page === 'Signup' ? "none" : 'block'};
 margin:20px 0px;
-font-family: 'Inter', sans-serif;
 font-size:15px;
 font-weight:200;
 text-align:center;

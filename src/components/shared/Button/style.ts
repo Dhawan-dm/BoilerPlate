@@ -22,7 +22,6 @@ border:none;
 
 @media screen and (min-width:500px)
 {
-    height:15%;
     font-size:100%;
     border-radius:10px;
 }

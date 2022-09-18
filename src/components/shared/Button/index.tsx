@@ -4,7 +4,7 @@ import { CustomButton } from './style'
 interface PropsType{
   page:string
 }
-function Button(props:PropsType) {
+const Button = (props:PropsType)=>{
   return (
    <CustomButton>{props.page}</CustomButton>
   )

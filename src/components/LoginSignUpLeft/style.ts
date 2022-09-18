@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 interface StyleProps{
     variant:string
 }
@@ -26,8 +27,8 @@ font-size: 30px;
 `
 
 export const ContainerBottom = styled.div`
-height:70%;
-width:70%;
+height:65%;
+width:65%;
 margin-left: 10%;
 `
 

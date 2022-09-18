@@ -8,6 +8,7 @@ interface stateType {
     password: string
    }[]
 }
+
 const initialState: stateType = {
     users: [],
 }

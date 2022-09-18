@@ -1,20 +1,25 @@
 import { AsyncActions } from "../../actionTypes";
-import {  asyncActionTypes } from "./type"
+import {  asyncActionTypes, UserArray } from "./type"
 
-export interface stateType {
-   usersData:[]
-}
-const initialState: stateType = {
+const initialState: UserArray = {
     usersData:[],
+    isDataFetched: false
 }
 
 const userReducer = (stateUser = initialState, action: asyncActionTypes) => {
     switch (action.type) {
-        case AsyncActions.SUCCESS: {
+        case AsyncActions.GITHUB_USER_DATA_REQUEST:{
+            return{
+                ...stateUser,
+                isDataFetched:false
+            }
+        }
+        case AsyncActions.GITHUB_USER_DATA_SUCCESS: {
             
             return {
                 ...stateUser,
-                usersData:action.payload
+                usersData:action.payload,
+                isDataFetched:true
             }
         }
         default:

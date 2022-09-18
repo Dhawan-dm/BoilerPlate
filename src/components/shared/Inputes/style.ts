@@ -23,7 +23,7 @@ font-size:17px;
     width: 85%;
     font-size:12px;
     padding:4px 8px;
-    border-radius:10px;
+    border-radius:8px;
 }
 @media screen and (min-width: 801px) and (max-width: 950px) {
     height:${(props:StylePropsType)=>props.page === 'Signup'?"80%":'95%'}

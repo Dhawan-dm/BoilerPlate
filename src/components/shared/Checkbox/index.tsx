@@ -4,7 +4,7 @@ interface PropsType{
   color: string;
 }
 
-function Check(props:PropsType) {
+const Check = (props:PropsType)=>{
   return (
     <Checked color='blue'>
     </Checked>

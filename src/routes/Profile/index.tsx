@@ -1,37 +1,53 @@
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
-import { request } from '../../store/actions';
-import { stateType } from '../../store/reducer/users';
+import Alert from '../../components/shared/Alert';
+import Spinner from '../../components/shared/spinner';
+import { fetchGithubUserRequest } from '../../store/actions';
+import { UserData } from '../../store/reducer/users/type';
+import { ProfileContainer, ProfileDetailes, ProfilePicture, UsernameContainer, Wrapper } from './style';
 
 interface ProfilePropsType{
-  users:[],
-  fetch:()=>void
+  users:UserData[],
+  fetch:()=>void,
+  loading:boolean,
+  failed:boolean
 }
 
-function Profile(props:ProfilePropsType) {
+const Profile = (props:ProfilePropsType)=>{
   
   useEffect(() => {
     props.fetch()
   },[])
 
-  console.log(props.users);
+  const handleProfile = (url:string) =>{
+    return window.open(url)
+  } 
   console.log(props);
   
-  return (<div></div>)
-
+  return <Wrapper>{props.failed ? <Alert></Alert> :props.loading ?(props.users.map((user:UserData)=>{
+    return <ProfileContainer key={user.id} onClick={()=>handleProfile(user.url)}>
+      <ProfilePicture dp={user.avatar_url} />
+      <ProfileDetailes>
+        <UsernameContainer>
+          {user.login}
+        </UsernameContainer>
+      </ProfileDetailes>
+    </ProfileContainer>
+  })):<Spinner/>}</Wrapper>
 }
 
-const mapStateToProps = (stateUser: any) => {
-  console.log(stateUser);
-
+const mapStateToProps = (state: any) => {
+  
   return {
-    users:stateUser.userReducer.userData
+    users:state.userReducer.usersData,
+    loading:state.userReducer.isDataFetched,
+    failed:state.alertReducer.isFailed
   }
 }
 const mapdispatchToProps = (dispatch: Dispatch) => {
   return {
-    fetch:()=>dispatch(request())
+    fetch:()=>dispatch(fetchGithubUserRequest())
   }
 }
 

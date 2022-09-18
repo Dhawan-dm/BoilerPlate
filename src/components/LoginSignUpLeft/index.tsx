@@ -1,11 +1,11 @@
 import {Container, ContainerBottom, ContainerTop, Heading} from './style'
-import ContainerImage from '../../asset/Saly-10/Saly-10.svg'
+import ContainerImage from '../../asset/images/Saly-10.svg'
 
 interface PropsType{
   page:string;
 }
 
-function LoginSignUpLeft(props:PropsType) {
+const LoginSignUpLeft = (props:PropsType)=>{
   return (
     
       <Container>

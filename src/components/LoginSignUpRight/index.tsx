@@ -8,7 +8,7 @@ interface PropsType {
     page: string;
 }
 
-function LoginSignUpRight(props: PropsType) {
+const LoginSignUpRight = (props: PropsType)=>{
     return (
         <Container>
             {props.page === "Signup" ? <MobileHead>Sign Up</MobileHead> : <MobileHead>Login</MobileHead>}
